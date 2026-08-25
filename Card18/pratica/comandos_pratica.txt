@@ -1,0 +1,71 @@
+Comandos usados na prática
+
+Pasta utilizada
+
+cd C:\Users\user\OneDrive\Documentos\GitHub\BootCamp\Card18\pratica # Entrar na pasta da prática
+
+dir # Listar os arquivos e pastas
+
+mkdir nginx # Criar a pasta nginx
+
+notepad nginx\index.html # Criar/editar o arquivo index.html
+
+Criando o container
+
+docker run -d --name pratica-nginx -p 8080:80 -v "%cd%\nginx:/usr/share/nginx/html" nginx # Criar e iniciar o container Nginx
+
+docker container ls # Listar os containers em execução
+
+Verificando o container
+
+docker container inspect pratica-nginx # Mostrar as informações do container
+
+docker container port pratica-nginx # Mostrar as portas mapeadas
+
+Testando o Nginx
+
+docker container exec pratica-nginx ls /usr/share/nginx/html # Listar os arquivos do Nginx
+
+Acessando o container
+
+docker container attach pratica-nginx # Entrar no container
+
+Comandos executados dentro do container
+
+apt update # Atualizar a lista de pacotes
+
+apt install nginx curl iproute2 -y # Instalar Nginx, curl e iproute2
+
+service nginx start # Iniciar o Nginx
+
+service nginx status # Verificar o status do Nginx
+
+ss -tlnp # Verificar as portas abertas e os processos
+
+curl http://localhost # Testar o Nginx dentro do container
+
+exit # Sair do container
+
+Testando pelo navegador
+
+http://localhost:8080 # Acessar o Nginx pelo navegador
+
+Parando e iniciando o container
+
+docker container stop pratica-nginx # Parar o container
+
+docker container start pratica-nginx # Iniciar o container novamente
+
+Logs e informações
+
+docker container logs pratica-nginx # Mostrar os logs do container
+
+docker container inspect pratica-nginx # Mostrar novamente as informações do container
+
+Criando uma imagem a partir do container
+
+docker container commit pratica-nginx minha-imagem-nginx # Criar uma imagem a partir do container
+
+docker image ls # Listar as imagens
+
+docker image history minha-imagem-nginx # Visualizar o histórico da imagem

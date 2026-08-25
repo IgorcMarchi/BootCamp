@@ -1,0 +1,63 @@
+Comandos mostrados na aula
+
+Docker {objeto} {ação}
+
+Docker {container | image | network | volume | etc} {ls | inspect | rm | create}
+
+
+
+docker container ls # Listar os containers
+
+docker container --help # Todas possíveis ações em cima do container que possam ser usadas
+
+docker container create --name <nome> <alpine/imagem> # criar um container
+
+docker container rm <nome> # remove o container criado
+
+docker image ls <nome da imagem> # Lista as imagem
+
+docker image rm <nome> # remove a imagem 
+
+docker container start <name> # Inicia o container parado
+
+docker container stop <name> # para o container
+
+docker container attach <name> # Se conectar a um container
+
+docker container rename <nome/id> <novo nome> # renomear nome de um container
+
+docker container exec <name> <comando> # Executa um comando diretamente no Docker sem ter que entrar nele primeiro
+
+docker container cp <pasta> <nome/container>:/ # copia arquivos ou diretórios entre o computador e o container
+
+docker container logs <name> # Mostra tudo que foi executado no console
+
+docker container inspect <name> # Informações do container
+
+docker container commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]] # Crie uma nova imagem a partir das alterações de um contêiner
+
+docker image save [OPTIONS] IMAGE [IMAGE...] # salva uma ou mais imagens
+
+docker image load [OPTIONS] # Carregar a imagem importada
+
+Docker image history [name] # Vizualizar o histórico da imagem desde o que foi construído a imagem
+
+docker container export [OPTIONS] CONTAINER # Exporta o sistema de arquivos de um contêiner como um arquivo tar.
+
+docker image tag SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG] # Crie uma tag TARGET_IMAGE que aponte para SOURCE_IMAGE.
+
+docker image push [OPTIONS] NAME[:TAG] # 
+Enviar uma imagem para um registro
+
+docker image rm [OPTIONS] IMAGE [IMAGE...] # Remove as imagens
+
+docker volume create [name] # Cria um volume
+
+docker system info # fala as informações computacionais do sistema do Docker
+
+docker [comands] prune [OPTIONS] # Remover dados não utilizados
+
+## Mapeamento de Portas
+
+Docker run -p <hostPort>:<containerPort> <imagem> # Mapeando um porta especifica do hospedeiro.
+
